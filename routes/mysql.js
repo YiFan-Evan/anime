@@ -15,7 +15,7 @@ router.get('/action',function(req,res,next){
     console.log(genres);
     console.log(name);
     console.log(order);
-    var where_name="name = '"+name+"' and ";
+    var where_name="name like '%"+name+"%' and ";
     var where_genres="genders like '%"+genres+"%' and ";
     var where_order="order by "+order+" desc";
     if(name===null||name===undefined||name===""||name==="undefined"){

@@ -2,46 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="312d6eba-7c26-4aef-a783-351ce4975f18" name="Default Changelist" comment="update">
-      <change afterPath="$PROJECT_DIR$/public/html/anime/rank/1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/html/anime/rank/2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/html/anime/rank/genres/1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/html/anime/rank/genres/2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/html/anime/rank/type/1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/html/anime/rank/type/2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/html/anime/rank/type/3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/html/main_page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/8daf922a2db416b2cd12dd4c5adc0b90.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/IMG_1186-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/javascripts/echarts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/javascripts/func.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/javascripts/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/layui/css/layui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/layui/css/modules/code.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/layui/css/modules/laydate/default/laydate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/layui/css/modules/layer/default/icon-ext.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/layui/css/modules/layer/default/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/layui/css/modules/layer/default/layer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/layui/css/modules/layer/default/loading-0.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/layui/css/modules/layer/default/loading-1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/layui/css/modules/layer/default/loading-2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/layui/font/iconfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/layui/font/iconfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/layui/font/iconfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/layui/font/iconfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/layui/font/iconfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/layui/layui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/public.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/earth-climate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/anime.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/html/anime/rank/1.1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/html/anime/rank/1.2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/html/anime/rank/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/mysql.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/mysql.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,9 +15,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="tsconfig.json" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -120,7 +84,8 @@
       <workItem from="1619586451072" duration="3711000" />
       <workItem from="1619661501891" duration="508000" />
       <workItem from="1619664402388" duration="1187000" />
-      <workItem from="1619669201900" duration="1118000" />
+      <workItem from="1619669201900" duration="1502000" />
+      <workItem from="1619671644877" duration="841000" />
     </task>
     <servers />
   </component>
@@ -140,26 +105,26 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="628" y="148" key="CommitChangelistDialog2/0.0.2048.1112@0.0.2048.1112" timestamp="1619104901104" />
-    <state width="2027" height="371" key="GridCell.Tab.0.bottom" timestamp="1619670663620">
+    <state width="2027" height="371" key="GridCell.Tab.0.bottom" timestamp="1619672672713">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="1515" height="258" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1619665599732" />
-    <state width="2027" height="371" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1619670663620" />
-    <state width="2027" height="371" key="GridCell.Tab.0.center" timestamp="1619670663620">
+    <state width="2027" height="371" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1619672672713" />
+    <state width="2027" height="371" key="GridCell.Tab.0.center" timestamp="1619672672713">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="1515" height="258" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1619665599732" />
-    <state width="2027" height="371" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1619670663620" />
-    <state width="2027" height="371" key="GridCell.Tab.0.left" timestamp="1619670663620">
+    <state width="2027" height="371" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1619672672713" />
+    <state width="2027" height="371" key="GridCell.Tab.0.left" timestamp="1619672672713">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="1515" height="258" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1619665599732" />
-    <state width="2027" height="371" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1619670663620" />
-    <state width="2027" height="371" key="GridCell.Tab.0.right" timestamp="1619670663620">
+    <state width="2027" height="371" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1619672672713" />
+    <state width="2027" height="371" key="GridCell.Tab.0.right" timestamp="1619672672713">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="1515" height="258" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1619665599732" />
-    <state width="2027" height="371" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1619670663620" />
+    <state width="2027" height="371" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1619672672713" />
     <state x="526" y="198" key="SettingsEditor" timestamp="1618999463883">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
