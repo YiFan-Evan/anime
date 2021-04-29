@@ -3,6 +3,16 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+/*a {*/
+/*  color: #5fb878;*/
+/*}*/
+
+.site-demo-title {
+  position: fixed;
+  left: 200px;
+  right: 0;
+  top: 60px;
+  padding-top: 5px;
+  z-index: 997;
+  background: #fff;
 }

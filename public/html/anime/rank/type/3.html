@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../../../../layui/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../stylesheets/style.css" />
+    <script src="../../../../layui/layui.js"></script>
+    <script src="../../../../javascripts/echarts.js"></script>
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">
+            <h2 id="jump">
+                Anime
+            </h2>
+        </div>
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item">
+                <a href="../../../main_page.html">主页</a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="">用户</a>
+            </li>
+            <li class="layui-nav-item layui-this">
+                <a href="javascript:;">动画查询</a>
+                <dl class="layui-nav-child">
+                    <dd class="layui-this">
+                        <a href="../genres/1.html">榜单查询</a>
+                    </dd>
+                    <dd>
+                        <a href="">定向查询</a>
+                    </dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">用户查询</a>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a href="">榜单查询</a>
+                    </dd>
+                    <dd>
+                        <a href="">定向查询</a>
+                    </dd>
+                </dl>
+            </li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;"><img src="../../../../images/bf3e860e28b2cbe6e2eceb4b86dbeaa6.jpeg" class="layui-nav-img"> Variation</a>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a href="">基本资料</a>
+                    </dd>
+                    <dd>
+                        <a href="">安全设置</a>
+                    </dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item">
+                <a href="">退出</a>
+            </li>
+        </ul>
+    </div>
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <ul class="layui-nav layui-nav-tree">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">
+                        动画查询
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd class="layui-this">
+                            <a href="../genres/1.html">
+                                榜单查询
+                            </a>
+                        </dd>
+                        <dd>
+                            <a href="javascript:;">
+                                定向查询
+                            </a>
+                        </dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        用户查询
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd>
+                            <a href="javascript:;">
+                                榜单查询
+                            </a>
+                        </dd>
+                        <dd>
+                            <a href="javascript:;">
+                                定向查询
+                            </a>
+                        </dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        用户页面
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="layui-tab layui-tab-brief ">
+        <ul class="layui-tab-title site-demo-title">
+            <li>
+                <a href="../genres/1.html">
+                    根据体裁查询
+                </a>
+            </li>
+            <li class="layui-this">
+                <a href="" style="color:#5fb878">
+                    根据类型查询
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="layui-body" style="padding-top: 55px;padding-left: 20px">
+        <span class="layui-breadcrumb">
+            <a href="1.html" >action</a>
+            <a href="2.html">scientific</a>
+            <a href=""><cite>else</cite></a>
+        </span>
+    </div>
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        © anime.com - 动画查询系统
+    </div>
+</div>
+<script type="text/javascript">
+    layui.use('element',function () {
+        var element=layui.element;
+    })
+</script>
+<script src="../../../../javascripts/func.js"></script>
+</body>
+</html>
