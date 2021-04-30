@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../../../layui/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="../../../stylesheets/style.css" />
+    <script src="../../../layui/layui.js"></script>
+    <script src="../../../javascripts/echarts.js"></script>
+    <script src="../../../javascripts/jquery.js"></script>
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">
+            <h2 id="jump">
+                Anime
+            </h2>
+        </div>
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item">
+                <a href="../../main_page.html">主页</a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="">用户</a>
+            </li>
+            <li class="layui-nav-item layui-this">
+                <a href="javascript:;">动画查询</a>
+                <dl class="layui-nav-child">
+                    <dd class="layui-this">
+                        <a href="1.html">榜单查询</a>
+                    </dd>
+                    <dd>
+                        <a href="">定向查询</a>
+                    </dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">用户查询</a>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a href="">榜单查询</a>
+                    </dd>
+                    <dd>
+                        <a href="">定向查询</a>
+                    </dd>
+                </dl>
+            </li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;"><img src="../../../images/bf3e860e28b2cbe6e2eceb4b86dbeaa6.jpeg" class="layui-nav-img"> Variation</a>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a href="">基本资料</a>
+                    </dd>
+                    <dd>
+                        <a href="">安全设置</a>
+                    </dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item">
+                <a href="">退出</a>
+            </li>
+        </ul>
+    </div>
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <ul class="layui-nav layui-nav-tree">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">
+                        动画查询
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd class="layui-this">
+                            <a href="1.html">
+                                榜单查询
+                            </a>
+                        </dd>
+                        <dd>
+                            <a href="javascript:;">
+                                定向查询
+                            </a>
+                        </dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        用户查询
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd>
+                            <a href="javascript:;">
+                                榜单查询
+                            </a>
+                        </dd>
+                        <dd>
+                            <a href="javascript:;">
+                                定向查询
+                            </a>
+                        </dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        用户页面
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="layui-tab layui-tab-brief ">
+        <ul class="layui-tab-title site-demo-title">
+            <li>
+                <a href="genres.html">
+                    根据体裁查询
+                </a>
+            </li>
+            <li>
+                <a href="type.html">
+                    根据类型查询
+                </a>
+            </li>
+            <li class="layui-this">
+                <a href=""  style="color:#5fb878">
+                    根据名字查询
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="layui-body" style="padding-top: 55px;padding-left: 20px">
+        <form class="layui-form" onsubmit="return false">
+            <div class="layui-form-item">
+                <label class="gard layui-form-label">名字</label>
+                <div class="layui-input-inline">
+                    <input class="layui-input" name="genres" lay-verify="required" id="testReload"/>
+                </div>
+                <label class="gard layui-form-label">排序方式</label>
+                <div class="layui-input-inline">
+                    <select name="order" lay-verify="required" id="examReload">
+                        <option value=""></option>
+                        <option value="ani_score">score</option>
+                        <option value="ani_num">favorites</option>
+                    </select>
+                </div>
+                <div class="layui-input-inline">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo" id="genres">立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+        <table id="demo" lay-filter="test"></table>
+    </div>
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        © anime.com - 动画查询系统
+    </div>
+</div>
+<script type="text/javascript">
+    layui.use('element',function () {
+        var element=layui.element;
+    });
+
+    layui.use('table', function(){
+        var table = layui.table;
+
+        //第一个实例
+        table.render({
+            elem: '#demo'
+            ,size: 'lg'
+            ,height:  'full-270'
+            ,url: 'http://localhost:3000/sql/name' //数据接口
+            ,cols: [[ //表头
+                {field: 'index', type: 'numbers'}
+                ,{field: 'ani_id', title: 'id', width:80}
+                ,{field: 'ani_name', title: 'name', width:80}
+                ,{field: 'ani_episode', title: 'episode', width:80}
+                ,{field: 'gen_name', title: 'genres', width:80}
+                ,{field: 'ani_aired', title: 'aired', width: 177}
+                ,{field: 'typ_name', title: 'type', width: 80}
+                ,{field: 'ani_score', title: 'score', width: 80,sort:true}
+                ,{field: 'ani_num', title: 'favorites', width: 100,sort:true}
+            ]]
+            ,page: true
+            ,limits: [3,5,10]  //一页选择显示3,5或10条数据
+            ,limit: 10  //一页显示10条数据
+            ,parseData: function(res){ //将原始数据解析成 table 组件所规定的数据，res为从url中get到的数据
+                var result;
+                console.log(this);
+                console.log(JSON.stringify(res));
+                if(this.page.curr){
+                    result = res.data.slice(this.limit*(this.page.curr-1),this.limit*this.page.curr);
+                }
+                else{
+                    result=res.data.slice(0,this.limit);
+                }
+                return {
+                    "code": res.code, //解析接口状态
+                    "msg": res.msg, //解析提示文本
+                    "count": res.count, //解析数据长度
+                    "data": result //解析数据列表
+                };
+            }
+        });
+        $(document).on('click','#genres',function (data) {
+            var search=$('#testReload');
+            var seek=$('#examReload');
+            table.reload('demo',{
+                where:{
+                    name:search.val(),
+                    order:seek.val()
+                },
+                page:{
+                    curr:1
+                }
+            })
+        })
+    });
+</script>
+<script src="../../../javascripts/func.js"></script>
+</body>
+</html>
