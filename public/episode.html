@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="../../../layui/css/layui.css" />
-    <link rel="stylesheet" type="text/css" href="../../../stylesheets/style.css" />
-    <script src="../../../layui/layui.js"></script>
-    <script src="../../../javascripts/echarts.js"></script>
-    <script src="../../../javascripts/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+    <script src="layui/layui.js"></script>
+    <script src="javascripts/echarts.js"></script>
+    <script src="javascripts/jquery.js"></script>
+    <script src="javascripts/numinput.js"></script>
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
@@ -19,19 +20,16 @@
         </div>
         <ul class="layui-nav layui-layout-left">
             <li class="layui-nav-item">
-                <a href="../../main_page.html">主页</a>
+                <a href="main_page.html">主页</a>
             </li>
             <li class="layui-nav-item">
-                <a href="">用户</a>
+                <a href="user.html">用户</a>
             </li>
             <li class="layui-nav-item layui-this">
                 <a href="javascript:;">动画查询</a>
                 <dl class="layui-nav-child">
                     <dd class="layui-this">
-                        <a href="1.html">榜单查询</a>
-                    </dd>
-                    <dd>
-                        <a href="">定向查询</a>
+                        <a href="genres.html">榜单查询</a>
                     </dd>
                 </dl>
             </li>
@@ -39,17 +37,17 @@
                 <a href="javascript:;">用户查询</a>
                 <dl class="layui-nav-child">
                     <dd>
-                        <a href="">榜单查询</a>
+                        <a href="user_bd_sc.html">榜单查询</a>
                     </dd>
                     <dd>
-                        <a href="">定向查询</a>
+                        <a href="user_dx.html">定向查询</a>
                     </dd>
                 </dl>
             </li>
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
-                <a href="javascript:;"><img src="../../../images/bf3e860e28b2cbe6e2eceb4b86dbeaa6.jpeg" class="layui-nav-img"> Variation</a>
+                <a href="javascript:;"><img src="images/bf3e860e28b2cbe6e2eceb4b86dbeaa6.jpeg" class="layui-nav-img"> Variation</a>
                 <dl class="layui-nav-child">
                     <dd>
                         <a href="">基本资料</a>
@@ -73,13 +71,8 @@
                     </a>
                     <dl class="layui-nav-child">
                         <dd class="layui-this">
-                            <a href="1.html">
+                            <a href="genres.html">
                                 榜单查询
-                            </a>
-                        </dd>
-                        <dd>
-                            <a href="javascript:;">
-                                定向查询
                             </a>
                         </dd>
                     </dl>
@@ -90,19 +83,19 @@
                     </a>
                     <dl class="layui-nav-child">
                         <dd>
-                            <a href="javascript:;">
+                            <a href="user_bd_sc.html">
                                 榜单查询
                             </a>
                         </dd>
                         <dd>
-                            <a href="javascript:;">
+                            <a href="user_dx.html">
                                 定向查询
                             </a>
                         </dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;">
+                    <a href="user.html">
                         用户页面
                     </a>
                 </li>
@@ -121,9 +114,19 @@
                     根据类型查询
                 </a>
             </li>
+            <li>
+                <a href="name.html">
+                    根据名字查询
+                </a>
+            </li>
+            <li>
+                <a href="aired.html">
+                    根据时间查询
+                </a>
+            </li>
             <li class="layui-this">
                 <a href=""  style="color:#5fb878">
-                    根据名字查询
+                    根据级数查询
                 </a>
             </li>
         </ul>
@@ -131,9 +134,13 @@
     <div class="layui-body" style="padding-top: 55px;padding-left: 20px">
         <form class="layui-form" onsubmit="return false">
             <div class="layui-form-item">
-                <label class="gard layui-form-label">名字</label>
+                <label class="gard layui-form-label">级数 从</label>
                 <div class="layui-input-inline">
-                    <input class="layui-input" name="genres" lay-verify="required" id="testReload"/>
+                    <input class="layui-input layui-input-number" min="0" max="1000" step="1" data-prec="0" name="episode" lay-verify="required" id="testReload"/>
+                </div>
+                <label class="gard layui-form-label">到</label>
+                <div class="layui-input-inline">
+                    <input class="layui-input layui-input-number" min="0" max="1000" step="1" data-prec="0" name="episode" lay-verify="required" id="demoReload"/>
                 </div>
                 <label class="gard layui-form-label">排序方式</label>
                 <div class="layui-input-inline">
@@ -144,7 +151,7 @@
                     </select>
                 </div>
                 <div class="layui-input-inline">
-                    <button class="layui-btn" lay-submit lay-filter="formDemo" id="genres">立即提交</button>
+                    <button class="layui-btn" lay-submit lay-filter="formDemo" id="submit">立即提交</button>
                     <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                 </div>
             </div>
@@ -157,6 +164,32 @@
     </div>
 </div>
 <script type="text/javascript">
+    layui.config({ base: 'js/modules/' }).extend({
+        numinput: 'numinput/numinput'
+    }).use(['form', 'numinput'], function() {
+        var $ = layui.$, form = layui.form, numinp = layui.numinput;
+        numinp.init({
+            // 123：123键置顶, 789：789键置顶
+            topBtns: 123,
+            // 右侧功能按钮开关
+            rightBtns: true,
+            // 功能按钮提示开关
+            showTips: true,
+            // 是否监听键盘事件
+            listening: true,
+            // 批量配置默认小数精确度，默认 -1 不处理精确度，0 表示禁止输入小数
+            defaultPrec: -1,
+            // 初始化回调，无参
+            initEnd: $.noop,
+            // 触发显示回调，参数为当前输入框和数字键盘的 jQuery 对象
+            showEnd: $.noop,
+            // 隐藏键盘回调，参数为当前输入框的 jQuery 对象
+            hideEnd: $.noop,
+            // 自定义 z-index
+            zIndex: 19999999
+        });
+    });
+
     layui.use('element',function () {
         var element=layui.element;
     });
@@ -169,14 +202,14 @@
             elem: '#demo'
             ,size: 'lg'
             ,height:  'full-270'
-            ,url: 'http://localhost:3000/sql/name' //数据接口
+            ,url: 'http://localhost:3000/sql/episode' //数据接口
             ,cols: [[ //表头
                 {field: 'index', type: 'numbers'}
-                ,{field: 'ani_id', title: 'id', width:80}
+                ,{field: 'ani_id', title: 'id', width:80,hide:true}
                 ,{field: 'ani_name', title: 'name', width:80}
                 ,{field: 'ani_episode', title: 'episode', width:80}
                 ,{field: 'gen_name', title: 'genres', width:80}
-                ,{field: 'ani_aired', title: 'aired', width: 177}
+                ,{field: 'ani_aired', title: 'aired', width: 177,templet:"<div>{{layui.util.toDateString(d.ani_aired, 'yyyy-MM-dd')}}</div>"}
                 ,{field: 'typ_name', title: 'type', width: 80}
                 ,{field: 'ani_score', title: 'score', width: 80,sort:true}
                 ,{field: 'ani_num', title: 'favorites', width: 100,sort:true}
@@ -202,12 +235,14 @@
                 };
             }
         });
-        $(document).on('click','#genres',function (data) {
+        $(document).on('click','#submit',function (data) {
             var search=$('#testReload');
+            var find=$('#demoReload');
             var seek=$('#examReload');
             table.reload('demo',{
                 where:{
-                    name:search.val(),
+                    episode_from:search.val(),
+                    episode_to:find.val(),
                     order:seek.val()
                 },
                 page:{
@@ -217,6 +252,6 @@
         })
     });
 </script>
-<script src="../../../javascripts/func.js"></script>
+<script src="javascripts/func.js"></script>
 </body>
 </html>

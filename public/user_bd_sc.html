@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="../../../../layui/css/layui.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../stylesheets/style.css" />
-    <script src="../../../../layui/layui.js"></script>
-    <script src="../../../../javascripts/echarts.js"></script>
+    <link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+    <script src="layui/layui.js"></script>
+    <script src="javascripts/echarts.js"></script>
+    <script src="javascripts/jquery.js"></script>
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
@@ -18,37 +19,34 @@
         </div>
         <ul class="layui-nav layui-layout-left">
             <li class="layui-nav-item">
-                <a href="../../../main_page.html">主页</a>
+                <a href="main_page.html">主页</a>
             </li>
             <li class="layui-nav-item">
-                <a href="">用户</a>
+                <a href="user.html">用户</a>
             </li>
-            <li class="layui-nav-item layui-this">
+            <li class="layui-nav-item">
                 <a href="javascript:;">动画查询</a>
                 <dl class="layui-nav-child">
-                    <dd class="layui-this">
-                        <a href="1.html">榜单查询</a>
-                    </dd>
                     <dd>
-                        <a href="">定向查询</a>
+                        <a href="genres.html">榜单查询</a>
                     </dd>
                 </dl>
             </li>
-            <li class="layui-nav-item">
+            <li class="layui-nav-item layui-this">
                 <a href="javascript:;">用户查询</a>
                 <dl class="layui-nav-child">
-                    <dd>
+                    <dd class="layui-this">
                         <a href="">榜单查询</a>
                     </dd>
                     <dd>
-                        <a href="">定向查询</a>
+                        <a href="user_dx.html">定向查询</a>
                     </dd>
                 </dl>
             </li>
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
-                <a href="javascript:;"><img src="../../../../images/bf3e860e28b2cbe6e2eceb4b86dbeaa6.jpeg" class="layui-nav-img"> Variation</a>
+                <a href="javascript:;"><img src="images/bf3e860e28b2cbe6e2eceb4b86dbeaa6.jpeg" class="layui-nav-img"> Variation</a>
                 <dl class="layui-nav-child">
                     <dd>
                         <a href="">基本资料</a>
@@ -66,42 +64,37 @@
     <div class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree">
-                <li class="layui-nav-item layui-nav-itemed">
+                <li class="layui-nav-item">
                     <a href="javascript:;">
                         动画查询
                     </a>
                     <dl class="layui-nav-child">
-                        <dd class="layui-this">
-                            <a href="1.html">
-                                榜单查询
-                            </a>
-                        </dd>
                         <dd>
-                            <a href="javascript:;">
-                                定向查询
+                            <a href="genres.html">
+                                榜单查询
                             </a>
                         </dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item">
+                <li class="layui-nav-item layui-nav-itemed">
                     <a href="javascript:;">
                         用户查询
                     </a>
                     <dl class="layui-nav-child">
-                        <dd>
+                        <dd class="layui-this">
                             <a href="javascript:;">
                                 榜单查询
                             </a>
                         </dd>
                         <dd>
-                            <a href="javascript:;">
+                            <a href="user_dx.html">
                                 定向查询
                             </a>
                         </dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;">
+                    <a href="user.html">
                         用户页面
                     </a>
                 </li>
@@ -112,19 +105,18 @@
         <ul class="layui-tab-title site-demo-title">
             <li class="layui-this">
                 <a href="" style="color:#5fb878">
-                    根据体裁查询
+                    根据收藏数查询
                 </a>
             </li>
             <li>
-                <a href="../type/1.html">
-                    根据类型查询
+                <a href="user_bd_gk.html">
+                    根据观看情况查询
                 </a>
             </li>
         </ul>
-        <!-- 内容主体区域 -->
-        <div style="padding: 15px;">
-            内容主体区域
-        </div>
+    </div>
+    <div class="layui-body" style="padding-top: 55px;padding-left: 20px">
+        <table id="demo" lay-filter="test"></table>
     </div>
     <div class="layui-footer">
         <!-- 底部固定区域 -->
@@ -135,7 +127,45 @@
     layui.use('element',function () {
         var element=layui.element;
     });
+
+    layui.use('table', function(){
+        var table = layui.table;
+
+        //第一个实例
+        table.render({
+            elem: '#demo'
+            ,size: 'lg'
+            ,height:  'full-270'
+            ,url: 'http://localhost:3000/sql/user/bd/sc' //数据接口
+            ,cols: [[ //表头
+                {field: 'index', type: 'numbers'}
+                ,{field: 'user_id', title: 'id', width:80,hide:true}
+                ,{field: 'user_name', title: 'name', width:80}
+                ,{field: 'user_listnum', title: 'listnum', width:120,sort:true}
+            ]]
+            ,page: true
+            ,limits: [3,5,10]  //一页选择显示3,5或10条数据
+            ,limit: 10  //一页显示10条数据
+            ,parseData: function(res){ //将原始数据解析成 table 组件所规定的数据，res为从url中get到的数据
+                var result;
+                console.log(this);
+                console.log(JSON.stringify(res));
+                if(this.page.curr){
+                    result = res.data.slice(this.limit*(this.page.curr-1),this.limit*this.page.curr);
+                }
+                else{
+                    result=res.data.slice(0,this.limit);
+                }
+                return {
+                    "code": res.code, //解析接口状态
+                    "msg": res.msg, //解析提示文本
+                    "count": res.count, //解析数据长度
+                    "data": result //解析数据列表
+                };
+            }
+        });
+    });
 </script>
-<script src="../../../../javascripts/func.js"></script>
+<script src="javascripts/func.js"></script>
 </body>
 </html>

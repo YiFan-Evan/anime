@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="../../../layui/css/layui.css" />
-    <link rel="stylesheet" type="text/css" href="../../../stylesheets/style.css" />
-    <script src="../../../layui/layui.js"></script>
-    <script src="../../../javascripts/echarts.js"></script>
-    <script src="../../../javascripts/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+    <script src="layui/layui.js"></script>
+    <script src="javascripts/echarts.js"></script>
+    <script src="javascripts/jquery.js"></script>
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
@@ -19,19 +19,16 @@
         </div>
         <ul class="layui-nav layui-layout-left">
             <li class="layui-nav-item">
-                <a href="../../main_page.html">主页</a>
+                <a href="main_page.html">主页</a>
             </li>
             <li class="layui-nav-item">
-                <a href="">用户</a>
+                <a href="user.html">用户</a>
             </li>
             <li class="layui-nav-item layui-this">
                 <a href="javascript:;">动画查询</a>
                 <dl class="layui-nav-child">
                     <dd class="layui-this">
-                        <a href="1.html">榜单查询</a>
-                    </dd>
-                    <dd>
-                        <a href="">定向查询</a>
+                        <a href="">榜单查询</a>
                     </dd>
                 </dl>
             </li>
@@ -39,17 +36,17 @@
                 <a href="javascript:;">用户查询</a>
                 <dl class="layui-nav-child">
                     <dd>
-                        <a href="">榜单查询</a>
+                        <a href="user_bd_sc.html">榜单查询</a>
                     </dd>
                     <dd>
-                        <a href="">定向查询</a>
+                        <a href="user_dx.html">定向查询</a>
                     </dd>
                 </dl>
             </li>
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
-                <a href="javascript:;"><img src="../../../images/bf3e860e28b2cbe6e2eceb4b86dbeaa6.jpeg" class="layui-nav-img"> Variation</a>
+                <a href="javascript:;"><img src="images/bf3e860e28b2cbe6e2eceb4b86dbeaa6.jpeg" class="layui-nav-img"> Variation</a>
                 <dl class="layui-nav-child">
                     <dd>
                         <a href="">基本资料</a>
@@ -73,13 +70,8 @@
                     </a>
                     <dl class="layui-nav-child">
                         <dd class="layui-this">
-                            <a href="1.html">
+                            <a href="">
                                 榜单查询
-                            </a>
-                        </dd>
-                        <dd>
-                            <a href="javascript:;">
-                                定向查询
                             </a>
                         </dd>
                     </dl>
@@ -90,19 +82,19 @@
                     </a>
                     <dl class="layui-nav-child">
                         <dd>
-                            <a href="javascript:;">
+                            <a href="user_bd_sc.html">
                                 榜单查询
                             </a>
                         </dd>
                         <dd>
-                            <a href="javascript:;">
+                            <a href="user_dx.html">
                                 定向查询
                             </a>
                         </dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;">
+                    <a href="user.html">
                         用户页面
                     </a>
                 </li>
@@ -111,13 +103,13 @@
     </div>
     <div class="layui-tab layui-tab-brief ">
         <ul class="layui-tab-title site-demo-title">
-            <li>
-                <a href="genres.html">
+            <li class="layui-this">
+                <a href="" style="color:#5fb878">
                     根据体裁查询
                 </a>
             </li>
-            <li class="layui-this">
-                <a href="type.html"  style="color:#5fb878">
+            <li>
+                <a href="type.html">
                     根据类型查询
                 </a>
             </li>
@@ -126,17 +118,30 @@
                     根据名字查询
                 </a>
             </li>
+            <li>
+                <a href="aired.html">
+                    根据时间查询
+                </a>
+            </li>
+            <li>
+                <a href="episode.html">
+                    根据级数查询
+                </a>
+            </li>
         </ul>
     </div>
     <div class="layui-body" style="padding-top: 55px;padding-left: 20px">
         <form class="layui-form" onsubmit="return false">
             <div class="layui-form-item">
-                <label class="gard layui-form-label">类型</label>
+                <label class="gard layui-form-label">体裁</label>
                 <div class="layui-input-inline">
                     <select name="genres" lay-verify="required" id="testReload">
                         <option value=""></option>
-                        <option value="TV">TV</option>
-                        <option value="Movie">Movie</option>
+                        <option value="action">action</option>
+                        <option value="adventure">adventure</option>
+                        <option value="comedy">comedy</option>
+                        <option value="fantasy">fantasy</option>
+                        <option value="magic">magic</option>
                     </select>
                 </div>
                 <label class="gard layui-form-label">排序方式</label>
@@ -148,7 +153,7 @@
                     </select>
                 </div>
                 <div class="layui-input-inline">
-                    <button class="layui-btn" lay-submit lay-filter="formDemo" id="genres">立即提交</button>
+                    <button class="layui-btn" lay-submit lay-filter="formDemo" id="submit">立即提交</button>
                     <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                 </div>
             </div>
@@ -173,14 +178,14 @@
             elem: '#demo'
             ,size: 'lg'
             ,height:  'full-270'
-            ,url: 'http://localhost:3000/sql/type' //数据接口
+            ,url: 'http://localhost:3000/sql/genres' //数据接口
             ,cols: [[ //表头
                 {field: 'index', type: 'numbers'}
-                ,{field: 'ani_id', title: 'id', width:80}
+                ,{field: 'ani_id', title: 'id', width:80,hide:true}
                 ,{field: 'ani_name', title: 'name', width:80}
                 ,{field: 'ani_episode', title: 'episode', width:80}
                 ,{field: 'gen_name', title: 'genres', width:80}
-                ,{field: 'ani_aired', title: 'aired', width: 177}
+                ,{field: 'ani_aired', title: 'aired', width: 177,templet:"<div>{{layui.util.toDateString(d.ani_aired, 'yyyy-MM-dd')}}</div>"}
                 ,{field: 'typ_name', title: 'type', width: 80}
                 ,{field: 'ani_score', title: 'score', width: 80,sort:true}
                 ,{field: 'ani_num', title: 'favorites', width: 100,sort:true}
@@ -206,12 +211,12 @@
                 };
             }
         });
-        $(document).on('click','#genres',function (data) {
+        $(document).on('click','#submit',function (data) {
             var search=$('#testReload');
             var seek=$('#examReload');
             table.reload('demo',{
                 where:{
-                    type:search.val(),
+                    genres:search.val(),
                     order:seek.val()
                 },
                 page:{
@@ -221,6 +226,6 @@
         })
     });
 </script>
-<script src="../../../javascripts/func.js"></script>
+<script src="javascripts/func.js"></script>
 </body>
 </html>
